@@ -26,15 +26,17 @@
                 if (n == 0) return 0;
                 if (n == 1) return 1;
                 if (n == 2) return 1;
-                let f1 = 1;
-                let f2 = 1;
+                let f1 = 1n;
+                let f2 = 1n;
                 let fn;
                 for (let i = 3; i <= n; i++) {
                     fn = f1 + f2;
                     f1 = f2;
                     f2 = fn;
                 }
-                return fn;
+                 if (f2==1n)
+                    f2 = 0;
+                return f2;
             }
 
             console.log(fib(n));
